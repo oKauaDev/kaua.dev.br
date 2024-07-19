@@ -1,0 +1,93 @@
+---
+import working_logo from "../../public/svg/working.svg";
+import links_logo from "../../public/svg/links.svg";
+import happybirday_logo from "../../public/svg/happybirday.svg";
+
+const url = Astro.request.url;
+
+let page: "home" | "skills" | "experience" | "links" = "home";
+
+if (url.endsWith("/skills") || url.endsWith("/skills/")) {
+  page = "skills";
+}
+
+if (url.endsWith("/experience") || url.endsWith("/experience/")) {
+  page = "experience";
+}
+
+if (url.endsWith("/links") || url.endsWith("/links/")) {
+  page = "links";
+}
+---
+
+<section>
+  <div class="ml-grid-horizontal lg:mx-grid-horizontal">
+    <h1
+      class="text-support-800 text-6xl font-semibold tracking-wide mb-3 1xl:text-5xl lg:text-center"
+    >
+      <span class="text-primary-300">K</span>auã Bra<span class="text-primary-300">z</span>
+    </h1>
+    <p class="text-xl text-support-700 mb-3 lg:text-center">Desenvolvedor full-stakc pleno</p>
+    <div class="flex flex-wrap gap-4 items-center lg:justify-center">
+      <div class="flex gap-3 items-center bg-support-200 px-2 py-1 rounded">
+        <img src={working_logo.src} alt="disponível" />
+        <p class="text-support-700">Disponível</p>
+      </div>
+      <div class="flex gap-3 items-center bg-support-200 px-2 py-1 rounded">
+        <img src={links_logo.src} alt="links" />
+        <a class="text-primary-300" href="/links">/Links</a>
+      </div>
+      <div class="flex gap-3 items-center bg-support-200 px-2 py-1 rounded">
+        <img src={happybirday_logo.src} alt="happybirday" />
+        <p class="text-support-700">May 10th</p>
+      </div>
+    </div>
+    <span class="block my-2 w-3/4 bg-support-200 h-[2px] lg:1/2 lg:mx-auto"></span>
+    <p class="text-support-600 leading-normal lg:text-center">
+      Eu crio a experiência que o seus clientes precisam, linha a linha.
+    </p>
+    <div class="mt-16 flex flex-col gap-3">
+      <div class="flex items-center gap-3 lg:justify-center">
+        <span
+          class={`block h-[2px] transition-[color_transform_width] duration-300 ${page === "home" ? "bg-primary-300 w-16" : "bg-support-700 w-10"}`}
+        ></span>
+        <a
+          href="/"
+          class={`uppercase font-medium transition-colors duration-300 ${page === "home" ? "text-primary-300" : "text-support-700"}`}
+          >Sobre</a
+        >
+        <span
+          class={`hidden h-[2px] transition-[color_transform_width] duration-300 ${page === "home" ? "bg-primary-300 w-16" : "bg-support-700 w-10"} lg:block`}
+        ></span>
+      </div>
+
+      <div class="flex items-center gap-3 lg:justify-center">
+        <span
+          class={`block h-[2px] transition-[color_transform_width] duration-300 ${page === "skills" ? "bg-primary-300 w-16" : "bg-support-700 w-10"}`}
+        ></span>
+        <a
+          href="/skills"
+          class={`uppercase font-medium transition-colors duration-300 ${page === "skills" ? "text-primary-300" : "text-support-700"}`}
+          >Skills</a
+        >
+        <span
+          class={`hidden h-[2px] transition-[color_transform_width] duration-300 ${page === "skills" ? "bg-primary-300 w-16" : "bg-support-700 w-10"} lg:block`}
+        ></span>
+      </div>
+
+      <div class="flex items-center gap-3 lg:justify-center">
+        <span
+          class={`block h-[2px] transition-[color_transform_width] duration-300 ${page === "experience" ? "bg-primary-300 w-16" : "bg-support-700 w-10"}`}
+        ></span>
+        <a
+          href="/experience"
+          class={`uppercase font-medium transition-colors duration-300 ${page === "experience" ? "text-primary-300" : "text-support-700"}`}
+          >Experiência</a
+        >
+        <span
+          class={`hidden h-[2px] transition-[color_transform_width] duration-300 ${page === "experience" ? "bg-primary-300 w-16" : "bg-support-700 w-10"} lg:block`}
+        ></span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const skills = [
+  {
+    category: "linguagens",
+    skills: ["Typescript", "Typescript", "PHP", "HTML", "CSS"],
+  },
+  {
+    category: "frameworks",
+    skills: ["NextJS", "Astro", "VUE", "Laravel"],
+  },
+  {
+    category: "ferramentas",
+    skills: [
+      "Visual Studio Code",
+      "Git",
+      "Github",
+      "Figma",
+      "Bash",
+      "Chrome DevTools",
+      "Postman",
+      "Linux",
+    ],
+  },
+];
+---
+
+<Layout title="KAZ | Minhas habilidades">
+  <h2 class="text-3xl font-semibold text-support-800 mb-10">👋 My habilidades!</h2>
+  <div class="flex flex-col gap-4">
+    {
+      skills.map((skill) => (
+        <div class="skills-container">
+          <p>{skill.category}</p>
+          <div class="skills-view">
+            {skill.skills.map((myskill) => (
+              <p>{myskill}</p>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Layout>
+<style>
+  .skills-container {
+    @apply py-3 px-5 bg-support-100 rounded;
+  }
+
+  .skills-container > p {
+    @apply uppercase text-support-800 font-medium mb-3;
+  }
+
+  .skills-view {
+    @apply flex items-center flex-wrap w-full gap-3;
+  }
+
+  .skills-view > p {
+    @apply bg-support-800 text-support-100 py-1 px-2 rounded;
+  }
+</style>
