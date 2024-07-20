@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const url = Astro.request.url;
+
+const urls = url.split(/[\/\\]/g);
+let page_name = urls[urls.length - 1];
+
+if (page_name === "/" || page_name === "") {
+  page_name = urls[urls.length - 2];
+}
+---
+
+<Layout title="KAZ | Kauã Braz">
+  <main>
+    <h2 class="text-3xl font-semibold text-support-800 mb-2">Amigo, não achei essa página 😅</h2>
+    <p class="text-support-700">
+      Talvez seja um erro meu, mas a página /{page_name} não existe, vou listar abaixo as principais
+      páginas disponíveis no site.
+    </p>
+    <div class="flex flex-col gap-4 mt-10">
+      <a
+        href="/"
+        class="block w-full py-2 px-4 bg-primary-300 text-support-100 text-center leading-none font-semibold uppercase tracking-wider rounded"
+        >HOME</a
+      >
+      <a
+        href="/skills"
+        class="block w-full py-2 px-4 bg-primary-300 text-support-100 text-center leading-none font-semibold uppercase tracking-wider rounded"
+        >SKILLS</a
+      >
+      <a
+        href="/experience"
+        class="block w-full py-2 px-4 bg-primary-300 text-support-100 text-center leading-none font-semibold uppercase tracking-wider rounded"
+        >EXPERIÊNCIA</a
+      >
+      <a
+        href="/links"
+        class="block w-full py-2 px-4 bg-primary-300 text-support-100 text-center leading-none font-semibold uppercase tracking-wider rounded"
+        >LINKS</a
+      >
+    </div>
+  </main>
+</Layout>
