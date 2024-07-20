@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 const url = Astro.request.url;
 
 const urls = url.split(/[\/\\]/g);
+console.log(urls);
 let page_name = urls[urls.length - 1];
 
 if (page_name === "/" || page_name === "") {

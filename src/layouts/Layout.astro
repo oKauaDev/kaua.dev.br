@@ -1,6 +1,7 @@
 ---
 import SideView from "../components/SideView.astro";
 import kaz_logo from "../../public/svg/kaz.svg";
+import SpeedInsights from "../components/SpeedInsights.astro";
 
 interface Props {
   title: string;
@@ -31,6 +32,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <SpeedInsights />
     <a href="/" class="block ml-16 mt-9 fixed lg:static"><img src={kaz_logo.src} alt="Kaz" /></a>
     <div class="flex gap-16 mb-20 lg:block lg:mt-16">
       <div class="fixed w-[40%] top-32 lg:static lg:w-auto">
