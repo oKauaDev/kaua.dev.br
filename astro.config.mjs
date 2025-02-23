@@ -7,6 +7,7 @@ import vercel from "@astrojs/vercel";
 
 export default defineConfig({
   base: "/",
+  site: "https://kaua.dev.br",
   vite: {
     plugins: [tailwindcss()],
   },
@@ -18,8 +19,9 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      customPages: ["https://kaua.dev.br"],
       changefreq: "weekly",
-      priority: 0.7,
+      priority: 1,
       lastmod: new Date("2025-02-23"),
     }),
   ],
