@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Analytics from "@vercel/analytics/astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 ---
 
 <!doctype html>
@@ -86,6 +88,8 @@ import "../styles/global.css";
     <meta name="theme-color" content="#1e3799" />
   </head>
   <body class="bg-support-100 antialiased">
+    <Analytics />
+    <SpeedInsights />
     <main class="max-w-[90vw] lg:max-w-[50vw] py-10 lg:!pt-20 mx-auto flex flex-col items-center">
       <slot />
     </main>

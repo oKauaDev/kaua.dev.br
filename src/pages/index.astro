@@ -1,15 +1,26 @@
 ---
-import { Content } from "./content.mdx";
+import { Content as ContentPart1 } from "./content-part1.mdx";
+import { Content as ContentPart2 } from "./content-part2.mdx";
 import Layout from "../layouts/Layout.astro";
 import GithubSvg from "../assets/github.svg";
 import GoogleSvg from "../assets/google.svg";
 import WhatsappSvg from "../assets/whatsapp.svg";
 import WorkanaSvg from "../assets/workana.svg";
+import { Image } from "astro:assets";
 ---
 
 <Layout>
   <article class="prose prose-h1:font-normal">
-    <Content />
+    <ContentPart1 />
+    <Image
+      src="/paisagem.jpg"
+      alt="Estrada, colinas e céu nublado"
+      width={640}
+      height={260}
+      sizes={"(max-width: 640px) 100vw, 640px"}
+      class="w-auto"
+    />
+    <ContentPart2 />
   </article>
   <footer class="flex items-center gap-8 mt-28">
     <a href="https://github.com/oKauaDev">
