@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+  font-family: "Aeonik";
+  src: url("../assets/aeonik.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-primary-100: #a7efff;
+  --color-primary-200: #50d4f1;
+  --color-primary-300: #20b4d6;
+  --color-primary-400: #0b7289;
+  --color-primary-500: #00151a;
+
+  --color-support-100: #e8eaeb;
+  --color-support-200: #919899;
+  --color-support-300: #44494a;
+  --color-support-400: #212324;
+  --color-support-500: #030505;
+
+  --font-sans: "Aeonik", sans-serif;
+}

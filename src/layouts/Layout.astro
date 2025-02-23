@@ -1,62 +1,93 @@
 ---
-import SideView from "../components/SideView.astro";
-import kaz_logo from "../../public/svg/kaz.svg";
-import SpeedInsights from "../components/SpeedInsights.astro";
-
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
+import "../styles/global.css";
 ---
 
 <!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Olá! Meu nome é Kauã Braz, sou um desenvolvedor full-stack com 5 anos de experiência em criação e desenvolvimento de sites. Especializado em design e codificação, eu projeto e desenvolvo sites personalizados que atendem às suas necessidades específicas. Explore meu portfólio para ver exemplos de meus trabalhos e descubra como posso transformar suas ideias em realidade. Trabalho com as tecnologias mais modernas para entregar soluções de alta qualidade. Veja mais sobre meus serviços e projetos no meu site pessoal."
-    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
+    <title>Kaua Desenvolvedor Full-stack & UX Designer | kaua.dev.br</title>
+    <meta
+      name="description"
+      content="Desenvolvedor Full-Stack Freelancer de Minas Gerais com 5+ anos transformando ideias em aplicações web completas e ultrarrápidas. Especialista em Next.js, Astro, Node.js e APIs REST. Entrego projetos que unem performance técnica e design impactante."
     />
 
-    <title>{title}</title>
+    <meta
+      property="og:title"
+      content="Kaua - Full-Stack que Entrega Projetos Rápidos com Toque de 'Uau!'"
+    />
+    <meta
+      property="og:description"
+      content="Do front-end ao back-end: desenvolvo soluções completas em tempo recorde. Já criou algo incrível hoje? Vamos conversar!"
+    />
+    <meta property="og:url" content="https://www.kaua.dev.br" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.kaua.dev.br/images/og-code-mountain.jpg" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Desenvolvedor Full-Stack que Escala Códigos e Montanhas 🧗♂️💻"
+    />
+    <meta
+      name="twitter:description"
+      content="Front-end que encanta + Back-end robusto = Soluções completas em tempo recorde. Veja meus cases e vamos conversar!"
+    />
+    <meta name="twitter:image" content="https://www.kaua.dev.br/images/twitter-dev-adventure.jpg" />
+
+    <meta
+      name="keywords"
+      content="desenvolvedor full-stack freelancer, desenvolvimento web Minas Gerais, Next.js expert, Astro JS performance, Node.js escalável, APIs REST integração, freelancer Workana, projetos GetNinjas, desenvolvimento rápido aplicações web"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kaua",
+        "jobTitle": "Desenvolvedor Full-Stack Freelancer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Minas Gerais",
+          "addressCountry": "Brasil"
+        },
+        "hasOccupation": {
+          "@type": "Occupation",
+          "skills": "Next.js, Astro JS, Node.js, Express, REST APIs",
+          "experienceYears": "5"
+        },
+        "portfolio": [
+          {
+            "@type": "CreativeWork",
+            "name": "SapiencIA",
+            "description": "Plataforma Next.js com UX intuitiva desenvolvida em 2 meses"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Luxfy",
+            "description": "Solução full-stack Next.js + Node.js para alta performance"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="canonical" href="https://www.kaua.dev.br" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Kaua Oliveira" />
+    <meta http-equiv="Content-Language" content="pt-br" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="theme-color" content="#1e3799" />
   </head>
-  <body>
-    <SpeedInsights />
-    <a href="/" class="block ml-16 mt-9 fixed lg:static"><img src={kaz_logo.src} alt="Kaz" /></a>
-    <div class="flex gap-16 mb-20 lg:block lg:mt-16">
-      <div class="fixed w-[40%] top-32 lg:static lg:w-auto">
-        <SideView />
-      </div>
-      <div class="mr-grid-horizontal mt-32 ml-[calc(40%+64px)] lg:ml-grid-horizontal">
-        <slot />
-      </div>
-    </div>
-    <p class="text-support-400 text-center mb-5">Kauã © 2024</p>
+  <body class="bg-support-100 antialiased">
+    <main class="max-w-[90vw] lg:max-w-[50vw] py-10 lg:!pt-20 mx-auto flex flex-col items-center">
+      <slot />
+    </main>
   </body>
 </html>
-<style is:global>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  html {
-    font-family: "Outfit", system-ui, sans-serif;
-    font-optical-sizing: auto;
-  }
-
-  initial-posotion {
-    position: initial;
-  }
-</style>
