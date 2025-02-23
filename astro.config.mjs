@@ -7,6 +7,7 @@ import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
 
 export default defineConfig({
+  base: "/",
   vite: {
     plugins: [tailwindcss()],
   },
