@@ -36,11 +36,4 @@ export default defineConfig({
       expiration: 60 * 60 * 24,
     },
   }),
-
-  redirects: {
-    "/github": "https://github.com/oKauaDev",
-    "/gdev": "https://g.dev/kaua",
-    "/whatsapp": "https://wa.me/+553298619211",
-    "/workana": "https://www.workana.com/freelancer/3b613107ca3c66457ca81125f5f6be85",
-  },
 });
