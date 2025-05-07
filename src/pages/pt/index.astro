@@ -1,0 +1,53 @@
+---
+import { Content as ContentPart1 } from "./content-part1.mdx";
+import { Content as ContentPart2 } from "./content-part2.mdx";
+import Layout from "../../layouts/Layout.astro";
+import GithubSvg from "../../assets/github.svg";
+import GoogleSvg from "../../assets/google.svg";
+import WhatsappSvg from "../../assets/whatsapp.svg";
+import { Image } from "astro:assets";
+---
+
+<Layout>
+  <article class="prose prose-h1:font-normal">
+    <ContentPart1 />
+    <Image
+      src="/paisagem.jpg"
+      alt="Estrada, colinas e céu nublado"
+      width={640}
+      height={260}
+      sizes={"(max-width: 640px) 100vw, 640px"}
+      class="w-auto -mb-4"
+    />
+    <p class="text-center italic">"Gosto de escalar e explorar lugares no meu tempo livre."</p>
+    <ContentPart2 />
+
+    <a
+      href="https://drive.google.com/file/d/1WFnJed_jR-vy23N2qiH6zzkM9HjY7zL2/view?usp=sharing"
+      target="_blank"
+      class="block border-2 text-support-500 border-support-500 w-max px-8 py-2 no-underline font-extrabold tracking-widest rounded mx-auto mt-20 transition-colors duration-200 hover:bg-support-500 hover:text-support-100"
+      >BAIXAR CV</a
+    >
+
+    <h1 class="text-center mt-10 mb-2">Vamos conversar?</h1>
+    <a
+      href="https://wa.me/+553298619211"
+      class="block text-center"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      wa.me/+553298619211
+    </a>
+  </article>
+  <footer class="flex items-center gap-8 mt-28">
+    <a href="https://github.com/oKauaDev" aria-label="Perfil do Github do Kauã">
+      <GithubSvg />
+    </a>
+    <a href="https://g.dev/kaua" aria-label="Perfil do Google Developer do Kauã">
+      <GoogleSvg />
+    </a>
+    <a href="https://wa.me/+553298619211" aria-label="Perfil do Whatsapp do Kauã">
+      <WhatsappSvg />
+    </a>
+  </footer>
+</Layout>

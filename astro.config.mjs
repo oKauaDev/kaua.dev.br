@@ -12,6 +12,14 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
+  i18n: {
+    locales: ["pt", "en", "es", "fr"],
+    defaultLocale: "pt",
+    routing: {
+      prefixDefaultLocale: true,
+    },
+  },
+
   experimental: {
     svg: true,
   },
@@ -23,6 +31,15 @@ export default defineConfig({
       changefreq: "weekly",
       priority: 1,
       lastmod: new Date("2025-02-23"),
+      i18n: {
+        defaultLocale: "pt",
+        locales: {
+          pt: "pt-BR",
+          en: "en-US",
+          es: "es-ES",
+          fr: "fr-FR",
+        },
+      },
     }),
   ],
 
