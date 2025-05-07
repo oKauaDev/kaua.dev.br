@@ -6,14 +6,11 @@ export const onRequest: MiddlewareHandler = defineMiddleware(
     const url = new URL(request.url);
 
     if (url.pathname === "/") {
-      const userLang = request.headers.get("accept-language")?.split(",")[0].split("-")[0];
+      const userLang = request.headers.get("accept-language")?.split(",")[0].split("-")[0] ?? "";
       const supportedLangs: string[] = ["pt", "en", "es", "fr"];
       const defaultLocale: string = "pt";
 
-      const targetLang: string = supportedLangs.includes(userLang ?? "")
-        ? userLang!
-        : defaultLocale;
-
+      const targetLang: string = supportedLangs.includes(userLang) ? userLang : defaultLocale;
       return redirect(`/${targetLang}`, 302);
     }
 
