@@ -1,6 +1,8 @@
 import { createClient } from "redis";
 
-const redis = await createClient().connect();
+const redis = await createClient({
+  url: process.env.REDIS_REDIS_URL,
+}).connect();
 
 export default async function aboutCount() {
   const result = await redis.get("item");
