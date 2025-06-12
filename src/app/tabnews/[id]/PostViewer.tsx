@@ -6,7 +6,13 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import React from "react";
 
-export default async function PostViewer({ params }: { params: { id: string } }) {
+type PageProps = {
+  params: Promise<{
+    id: string;
+  }>;
+};
+
+export default async function PostViewer({ params }: PageProps) {
   const t = await getTranslations("TabnewsPostPage");
 
   const post = await getTabnewsPostInfo((await params).id);

@@ -1,7 +1,7 @@
 import { Skeleton } from "@/components/ui/skeleton";
 import React from "react";
 
-export const revalidate = 60 * 60 * 3;
+export const revalidate = 10800;
 
 export default async function PostLoading() {
   return (

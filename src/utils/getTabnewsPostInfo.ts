@@ -21,7 +21,7 @@ interface PostInfo {
 
 export default async function getTabnewsPostInfo(id: string) {
   const res = await fetch(`https://www.tabnews.com.br/api/v1/contents/kauadev/${id}`, {
-    next: { revalidate: 60 * 60 },
+    next: { revalidate: 3600 },
   });
 
   if (!res.ok) {

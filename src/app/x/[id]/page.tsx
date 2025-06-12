@@ -4,9 +4,15 @@ import React, { Suspense } from "react";
 import PostLoading from "./PostLoading";
 import PostViewer from "./PostViewer";
 
-export const revalidate = 60 * 60 * 3;
+export const revalidate = 10800;
 
-export default async function XPostPage({ params }: { params: { id: string } }) {
+type PageProps = {
+  params: Promise<{
+    id: string;
+  }>;
+};
+
+export default async function XPostPage({ params }: PageProps) {
   return (
     <>
       <Navbar />

@@ -33,14 +33,13 @@ interface Response {
 }
 
 export default async function getTwitterPosts() {
-  //1366763978844741638
   const res = await fetch(
-    "https://api.twitter.com/2/users/1933136878619824129/tweets?tweet.fields=attachments,text,source,public_metrics,created_at&expansions=attachments.media_keys&media.fields=url,width,height,preview_image_url",
+    "https://api.twitter.com/2/users/1366763978844741638/tweets?tweet.fields=attachments,text,source,public_metrics,created_at&expansions=attachments.media_keys&media.fields=url,width,height,preview_image_url",
     {
       headers: {
         Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
       },
-      next: { revalidate: 60 * 60 * 12 },
+      next: { revalidate: 43200 },
     }
   );
 
