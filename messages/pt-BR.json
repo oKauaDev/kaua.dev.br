@@ -1,0 +1,62 @@
+{
+  "NavbarComponent": {
+    "about": "Sobre",
+    "tooltip_x": "Acessar meu perfil no X",
+    "tooltip_tabnews": "Acessar meu perfil no Tabnews"
+  },
+
+  "FooterComponent": {
+    "source": "Código",
+    "credits": "“Se você não fizer nada, nada vai mudar.”"
+  },
+
+  "HomePage": {
+    "table_date": "data",
+    "table_in": "em",
+    "table_title": "título",
+    "table_views": "views"
+  },
+
+  "TabnewsPostPage": {
+    "a": "Há",
+    "months": "meses",
+    "month": "mes",
+    "days": "dias",
+    "day": "dia",
+    "hours": "horas",
+    "hour": "hora",
+    "minutes": "minutos",
+    "minute": "minuto",
+    "ago": "agora",
+    "likes": "Curtidas"
+  },
+
+  "XPostPage": {
+    "a": "Há",
+    "months": "meses",
+    "month": "mes",
+    "days": "dias",
+    "day": "dia",
+    "hours": "horas",
+    "hour": "hora",
+    "minutes": "minutos",
+    "minute": "minuto",
+    "ago": "agora",
+    "views": "Visualizações"
+  },
+
+  "AboutPage": {
+    "title": "Sobre mim",
+    "a": "Há",
+    "months": "meses",
+    "month": "mes",
+    "days": "dias",
+    "day": "dia",
+    "hours": "horas",
+    "hour": "hora",
+    "minutes": "minutos",
+    "minute": "minuto",
+    "ago": "agora",
+    "views": "Visualizações"
+  }
+}

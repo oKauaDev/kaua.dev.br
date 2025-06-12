@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "components.json": true,
+    "node_modules": true,
+    ".vscode": true,
+    ".next": true,
+    "next-env.d.ts": true,
+    "postcss.config.mjs": true
+  }
+}
