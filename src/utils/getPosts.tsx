@@ -46,7 +46,7 @@ export default async function getPosts() {
     xPosts.data.forEach((post) => {
       const attchaments: Posts[0]["attachments"] = [];
 
-      post.attachments.media_keys.forEach((key) => {
+      post.attachments?.media_keys?.forEach((key) => {
         const media = xPosts.includes.media.find((m) => m.media_key === key);
         if (media) {
           attchaments.push({

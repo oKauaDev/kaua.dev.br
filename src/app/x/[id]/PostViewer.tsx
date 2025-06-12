@@ -86,7 +86,7 @@ export default async function PostViewer({ params }: PageProps) {
 
   const attchaments: { width: number; height: number; url: string; type: string }[] = [];
 
-  post.attachments.media_keys.forEach((key) => {
+  post.attachments?.media_keys?.forEach((key) => {
     const media = posts.includes.media.find((m) => m.media_key === key);
 
     if (media) {
