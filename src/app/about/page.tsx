@@ -63,7 +63,7 @@ export default async function AboutPage() {
             <p className="text-zinc-700 dark:text-zinc-400 text-sm leading-4 max-md:hidden">
               {dateLong} ({timeDiff})
             </p>
-            <p className="text-zinc-700 dark:text-zinc-400 text-sm leading-4 max-md:block">
+            <p className="text-zinc-700 dark:text-zinc-400 text-sm leading-4 hidden max-md:block">
               {dateShort} ({timeDiff})
             </p>
           </div>
