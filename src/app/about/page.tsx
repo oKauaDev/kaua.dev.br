@@ -1,10 +1,9 @@
 import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/Navbar";
 import { markdownToHtml } from "@/lib/markdown";
-import aboutCount from "@/utils/aboutCount";
-import formatNumber from "@/utils/formatNumber";
 import { getTranslations } from "next-intl/server";
 import React from "react";
+import AboutCount from "./AboutCount";
 
 const DATE = 1749747079157;
 
@@ -39,8 +38,6 @@ Se você quer um desenvolvedor full-stack que entrega projetos rápidos, eficien
 
 export default async function AboutPage() {
   const t = await getTranslations("AboutPage");
-
-  const views = await aboutCount();
 
   const dateLong = new Date(DATE).toLocaleDateString("pt-BR", {
     day: "2-digit",
@@ -99,9 +96,7 @@ export default async function AboutPage() {
             </p>
           </div>
 
-          <p className="text-zinc-700 dark:text-zinc-400 text-sm leading-4 max-md:mt-2">
-            {formatNumber(views)} {t("views")}
-          </p>
+          <AboutCount />
         </div>
       </section>
 
