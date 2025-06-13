@@ -25,7 +25,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="dark">
       <body
-        className={`${lexendDeca.variable} antialiased bg-zinc-50 dark:bg-zinc-950 px-[20.94vw] py-20 max-md:px-[5vw] max-md:py-6 min-h-screen`}
+        className={`${lexendDeca.variable} antialiased bg-neutral-50 dark:bg-neutral-950 px-[20.94vw] py-20 max-md:px-[5vw] max-md:py-6 min-h-screen`}
       >
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>

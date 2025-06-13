@@ -31,13 +31,13 @@ export default function ThemeButton() {
 
   return (
     <div
-      className="p-2 bg-zinc-200 rounded dark:bg-zinc-800 cursor-pointer"
+      className="p-2 bg-neutral-200 rounded dark:bg-neutral-800 cursor-pointer"
       onClick={() => toggleTheme()}
     >
       {theme === "dark" ? (
-        <Sun width={16} height={16} className="text-zinc-700 dark:text-zinc-300" />
+        <Sun width={16} height={16} className="text-neutral-700 dark:text-neutral-300" />
       ) : (
-        <Moon width={16} height={16} className="text-zinc-700 dark:text-zinc-300" />
+        <Moon width={16} height={16} className="text-neutral-700 dark:text-neutral-300" />
       )}
     </div>
   );

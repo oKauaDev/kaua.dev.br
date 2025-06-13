@@ -11,7 +11,7 @@ export default async function Navbar() {
 
   return (
     <nav className="flex items-center justify-between">
-      <Link href="/" className="text-zinc-950 dark:text-zinc-100 font-medium text-xl">
+      <Link href="/" className="text-neutral-950 dark:text-neutral-100 font-medium text-xl">
         Kauã Braz
       </Link>
 
@@ -19,7 +19,7 @@ export default async function Navbar() {
         <ThemeButton />
         <Link
           href="/about"
-          className="leading-6 text-zinc-800 dark:text-zinc-300 py-2 px-4 rounded transition-colors duration-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 cursor-pointer"
+          className="leading-6 text-neutral-800 dark:text-neutral-300 py-2 px-4 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer"
         >
           {t("about")}
         </Link>
@@ -27,7 +27,7 @@ export default async function Navbar() {
           <TooltipTrigger asChild>
             <Link
               href="https://x.com/oKauaDev"
-              className="p-2 rounded transition-colors duration-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 cursor-pointer text-zinc-800 dark:text-zinc-300"
+              className="p-2 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer text-neutral-800 dark:text-neutral-300"
             >
               <XNavbar />
             </Link>
@@ -41,7 +41,7 @@ export default async function Navbar() {
           <TooltipTrigger asChild>
             <Link
               href="https://www.tabnews.com.br/kauadev"
-              className="p-2 rounded transition-colors duration-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 cursor-pointer text-zinc-800 dark:text-zinc-300"
+              className="p-2 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer text-neutral-800 dark:text-neutral-300"
             >
               <TabnewsNavbar />
             </Link>

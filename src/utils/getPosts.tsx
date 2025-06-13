@@ -43,7 +43,7 @@ export default async function getPosts() {
   try {
     const xPosts = await getTwitterPosts();
 
-    xPosts.data.forEach((post) => {
+    xPosts?.data?.forEach((post) => {
       const attchaments: Posts[0]["attachments"] = [];
 
       post.attachments?.media_keys?.forEach((key) => {

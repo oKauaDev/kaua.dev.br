@@ -105,20 +105,20 @@ export default async function PostViewer({ params }: PageProps) {
         <h1 className="text-2xl leading-9 text-black dark:text-white">{title ?? "---------"}</h1>
         <div className="flex items-center justify-between max-md:block">
           <div className="flex items-center gap-3  mt-2">
-            <div className="text-zinc-700 dark:text-zinc-400">
+            <div className="text-neutral-700 dark:text-neutral-400">
               <X />
             </div>
-            <p className="text-zinc-700 dark:text-zinc-400 text-sm leading-4">oKauaDev</p>
-            <span className="block w-[1px] h-full min-h-[16px] bg-zinc-700 dark:bg-zinc-400"></span>
-            <p className="text-zinc-700 dark:text-zinc-400 text-sm leading-4 max-md:hidden">
+            <p className="text-neutral-700 dark:text-neutral-400 text-sm leading-4">oKauaDev</p>
+            <span className="block w-[1px] h-full min-h-[16px] bg-neutral-700 dark:bg-neutral-400"></span>
+            <p className="text-neutral-700 dark:text-neutral-400 text-sm leading-4 max-md:hidden">
               {dateLong} ({timeDiff})
             </p>
-            <p className="text-zinc-700 dark:text-zinc-400 text-sm leading-4 hidden max-md:block">
+            <p className="text-neutral-700 dark:text-neutral-400 text-sm leading-4 hidden max-md:block">
               {dateShort} ({timeDiff})
             </p>
           </div>
 
-          <p className="text-zinc-700 dark:text-zinc-400 text-sm leading-4 max-md:mt-2">
+          <p className="text-neutral-700 dark:text-neutral-400 text-sm leading-4 max-md:mt-2">
             {formatNumber(post.public_metrics.impression_count)} {t("views")}
           </p>
         </div>

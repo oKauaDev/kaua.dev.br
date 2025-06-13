@@ -8,10 +8,10 @@ export default async function Footer() {
   return (
     <footer className="mt-24">
       <div className="w-full  flex items-center justify-between">
-        <p className="text-zinc-600 dark:text-zinc-500">
+        <p className="text-neutral-600 dark:text-neutral-500">
           Kauã Braz (
           <Link
-            className="text-zinc-800 dark:text-zinc-200 underline"
+            className="text-neutral-800 dark:text-neutral-200 underline"
             href="https://github.com/oKauaDev"
           >
             @oKauaDev
@@ -20,7 +20,7 @@ export default async function Footer() {
         </p>
 
         <Link
-          className="text-zinc-800 dark:text-zinc-200 underline"
+          className="text-neutral-800 dark:text-neutral-200 underline"
           href="https://github.com/oKauaDev/kaua.dev.br"
           target="_blank"
         >
@@ -28,7 +28,7 @@ export default async function Footer() {
         </Link>
       </div>
 
-      <p className="text-zinc-600 dark:text-zinc-500 mt-8 text-center">{t("credits")}</p>
+      <p className="text-neutral-600 dark:text-neutral-500 mt-8 text-center">{t("credits")}</p>
     </footer>
   );
 }

@@ -10,7 +10,7 @@ export default async function PostLoading() {
         <Skeleton className="w-[40vw] h-6" />
         <div className="flex items-center justify-between max-md:block">
           <div className="flex items-center gap-3  mt-2">
-            <div className="text-zinc-700 dark:text-zinc-400">
+            <div className="text-neutral-700 dark:text-neutral-400">
               <Skeleton className="w-[16px] h-[16px]" />
             </div>
             <Skeleton className="w-[50px] h-[16px]" />
