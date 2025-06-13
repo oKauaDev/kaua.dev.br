@@ -1,13 +1,18 @@
-import aboutCount from "@/utils/aboutCount";
+"use client";
+
 import formatNumber from "@/utils/formatNumber";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 import React from "react";
 
-export const dynamic = "force-dynamic";
+export default function AboutCount() {
+  const t = useTranslations("AboutPage");
+  const [views, setViews] = React.useState(0);
 
-export default async function AboutCount() {
-  const t = await getTranslations("AboutPage");
-  const views = await aboutCount();
+  React.useEffect(() => {
+    fetch("/api/about/count")
+      .then((res) => res.json())
+      .then((data) => setViews(data.views));
+  }, []);
 
   return (
     <p className="text-zinc-700 dark:text-zinc-400 text-sm leading-4 max-md:mt-2">
