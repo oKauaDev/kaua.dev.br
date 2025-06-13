@@ -28,7 +28,7 @@ export default async function PostViewer({ params }: PageProps) {
   });
   const dateShort = new Date(post.published_at).toLocaleDateString("pt-BR", {
     day: "2-digit",
-    month: "narrow",
+    month: "2-digit",
     year: "numeric",
   });
 
