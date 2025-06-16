@@ -51,6 +51,8 @@ export default async function AboutPage() {
 
   const content = await markdownToHtml(markdown);
 
+  console.log(content);
+
   return (
     <>
       <Navbar />
