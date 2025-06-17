@@ -24,6 +24,7 @@ export default async function AboutPage() {
 
   const actualDate = new Date();
   const diff = actualDate.getTime() - new Date(DATE).getTime();
+  const diffYears = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
   const diffMonths = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
   const diffDays = Math.floor(diff / (1000 * 60 * 60 * 24));
   const diffHour = Math.floor(diff / (1000 * 60 * 60));
@@ -31,7 +32,11 @@ export default async function AboutPage() {
 
   let timeDiff = "";
 
-  if (diffMonths > 1) {
+  if (diffYears > 1) {
+    timeDiff = `${t("a")} ${diffYears} ${t("years")}`;
+  } else if (diffYears === 1) {
+    timeDiff = `${t("a")} ${diffYears} ${t("year")}`;
+  } else if (diffMonths > 1) {
     timeDiff = `${t("a")} ${diffMonths} ${t("months")}`;
   } else if (diffMonths === 1) {
     timeDiff = `${t("a")} ${diffMonths} ${t("month")}`;

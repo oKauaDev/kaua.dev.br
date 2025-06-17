@@ -19,6 +19,8 @@
 
   "TabnewsPostPage": {
     "a": "Há",
+    "years": "anos",
+    "year": "ano",
     "months": "meses",
     "month": "mes",
     "days": "dias",
@@ -33,6 +35,8 @@
 
   "XPostPage": {
     "a": "Há",
+    "years": "anos",
+    "year": "ano",
     "months": "meses",
     "month": "mes",
     "days": "dias",
@@ -48,6 +52,8 @@
   "AboutPage": {
     "title": "Sobre mim",
     "a": "Há",
+    "years": "anos",
+    "year": "ano",
     "months": "meses",
     "month": "mes",
     "days": "dias",

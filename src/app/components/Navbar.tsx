@@ -27,6 +27,7 @@ export default async function Navbar() {
           <TooltipTrigger asChild>
             <Link
               href="https://x.com/oKauaDev"
+              aria-label="Meu perfil no X"
               className="p-2 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer text-neutral-800 dark:text-neutral-300"
             >
               <XNavbar />
@@ -41,6 +42,7 @@ export default async function Navbar() {
           <TooltipTrigger asChild>
             <Link
               href="https://www.tabnews.com.br/kauadev"
+              aria-label="Meu perfil no Tabnews"
               className="p-2 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer text-neutral-800 dark:text-neutral-300"
             >
               <TabnewsNavbar />

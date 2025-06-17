@@ -36,14 +36,19 @@ export default async function PostViewer({ params }: PageProps) {
 
   const actualDate = new Date();
   const diff = actualDate.getTime() - new Date(post.created_at).getTime();
-  const diffMonths = Math.ceil(diff / (1000 * 60 * 60 * 24 * 30));
-  const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
-  const diffHour = Math.ceil(diff / (1000 * 60 * 60));
-  const diffMinutes = Math.ceil(diff / (1000 * 60));
+  const diffYears = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  const diffMonths = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
+  const diffDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const diffHour = Math.floor(diff / (1000 * 60 * 60));
+  const diffMinutes = Math.floor(diff / (1000 * 60));
 
   let timeDiff = "";
 
-  if (diffMonths > 1) {
+  if (diffYears > 1) {
+    timeDiff = `${t("a")} ${diffYears} ${t("years")}`;
+  } else if (diffYears === 1) {
+    timeDiff = `${t("a")} ${diffYears} ${t("year")}`;
+  } else if (diffMonths > 1) {
     timeDiff = `${t("a")} ${diffMonths} ${t("months")}`;
   } else if (diffMonths === 1) {
     timeDiff = `${t("a")} ${diffMonths} ${t("month")}`;
