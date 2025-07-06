@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import ThemeButton from "./ThemeButton";
+import GithubNavbar from "@/components/icons/GithubNavbar";
 
 export default async function Navbar() {
   const t = await getTranslations("NavbarComponent");
@@ -23,11 +24,29 @@ export default async function Navbar() {
         >
           {t("about")}
         </Link>
+
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Link
+              href="https://github.com/oKauaDev"
+              aria-label="Meu perfil no GitHub"
+              target="_blank"
+              className="p-2 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer text-neutral-800 dark:text-neutral-300"
+            >
+              <GithubNavbar />
+            </Link>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{t("tooltip_github")}</p>
+          </TooltipContent>
+        </Tooltip>
+
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
               href="https://x.com/oKauaDev"
               aria-label="Meu perfil no X"
+              target="_blank"
               className="p-2 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer text-neutral-800 dark:text-neutral-300"
             >
               <XNavbar />
@@ -43,6 +62,7 @@ export default async function Navbar() {
             <Link
               href="https://www.tabnews.com.br/kauadev"
               aria-label="Meu perfil no Tabnews"
+              target="_blank"
               className="p-2 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer text-neutral-800 dark:text-neutral-300"
             >
               <TabnewsNavbar />

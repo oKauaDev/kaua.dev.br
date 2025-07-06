@@ -9,14 +9,14 @@ Sou o arquiteto por trás de aplicações web completas, do front-end ao back-en
 
 Trabalho como freelancer, entregando projetos que não só funcionam, mas se destacam no mercado.
 
-![Paisagem de montanhas com céu nublado](/paisagem.jpg)
+![Paisagem de montanhas com céu nublado](/paisagem.webp)
 
 "Gosto de escalar e explorar lugares no meu tempo livre."
 
 Alguns cases que mostram como eu misturo código + criatividade:
 
-1. **[SapiencIA](https://sapienciaedu.com.br/)**: Desenvolvi uma plataforma em Next.js em apenas 2 meses, focando em uma experiência de usuário tão intuitiva que até sua avó usaria!  
-2. **[Luxfy](https://luxfy.app/)**: Criei uma solução completa (front + back) com Next.js e Node.js puro em 1 mês — performance máxima, sem enrolação  
+1. **[Luxfy](https://luxfy.app/)**: Criei uma solução completa (front + back) com Next.js e Node.js puro em 1 mês — performance máxima, sem enrolação  
+2. **[SapiencIA](https://sapienciaedu.com.br/)**: Desenvolvi uma plataforma em Next.js em apenas 2 meses, focando em uma experiência de usuário tão intuitiva que até sua avó usaria!  
 3. **Halvo**: Integrei front-end e back-end usando APIs REST, garantindo que o sistema cresça sem travar, mesmo sob demanda alta  
 
 Quando não estou programando, você me encontra:
