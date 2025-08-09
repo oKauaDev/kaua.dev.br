@@ -27,7 +27,7 @@ export default async function getTabnewsPosts() {
       }
     );
 
-    console.log(res);
+    console.warn(res);
 
     if (!res.ok) {
       console.error(`Tabnews API error: ${res.status} ${res.statusText}`);

@@ -24,7 +24,7 @@ export default async function getTabnewsPostInfo(id: string) {
     next: { revalidate: 3600 },
   });
 
-  console.log(res);
+  console.warn(res);
 
   if (!res.ok) {
     return null;

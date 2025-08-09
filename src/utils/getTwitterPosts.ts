@@ -50,7 +50,7 @@ export default async function getTwitterPosts() {
       }
     );
 
-    console.log(res);
+    console.warn(res);
 
     if (!res.ok) {
       console.error(`Twitter API error: ${res.status} ${res.statusText}`);
