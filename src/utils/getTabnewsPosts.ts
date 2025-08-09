@@ -24,6 +24,10 @@ export default async function getTabnewsPosts() {
       "https://www.tabnews.com.br/api/v1/contents/kauadev?page=1&per_page=50",
       {
         next: { revalidate: 60 },
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36",
+        },
       }
     );
 
