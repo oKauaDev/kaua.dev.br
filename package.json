@@ -18,9 +18,13 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "redis": "^5.5.6",
+    "rehype-raw": "^7.0.0",
     "rehype-react": "^8.0.0",
+    "rehype-sanitize": "^6.0.0",
+    "rehype-stringify": "^10.0.1",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
+    "remark-rehype": "^11.1.2",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {

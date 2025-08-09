@@ -135,4 +135,8 @@
   ::-webkit-scrollbar-thumb {
     @apply bg-violet-600 rounded-xl;
   }
+
+  #post-content img {
+    display: inline !important;
+  }
 }

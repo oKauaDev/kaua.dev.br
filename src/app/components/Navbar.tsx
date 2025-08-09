@@ -12,15 +12,30 @@ export default async function Navbar() {
 
   return (
     <nav className="flex items-center justify-between">
-      <Link href="/" className="text-neutral-950 dark:text-neutral-100 font-medium text-xl">
+      <Link
+        href="/"
+        className="text-neutral-950 dark:text-neutral-100 font-medium text-xl max-sm:hidden"
+      >
         Kauã Braz
       </Link>
 
-      <div className="flex items-center gap-5 max-md:gap-1">
-        <ThemeButton />
+      <div className="hidden items-center gap-5 max-md:gap-1 max-sm:flex">
         <Link
           href="/about"
           className="leading-6 text-neutral-800 dark:text-neutral-300 py-2 px-4 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer"
+        >
+          {t("about")}
+        </Link>
+        <ThemeButton />
+      </div>
+
+      <div className="flex items-center gap-5 max-md:gap-1">
+        <div className="max-sm:hidden">
+          <ThemeButton />
+        </div>
+        <Link
+          href="/about"
+          className="leading-6 max-sm:hidden text-neutral-800 dark:text-neutral-300 py-2 px-4 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer"
         >
           {t("about")}
         </Link>

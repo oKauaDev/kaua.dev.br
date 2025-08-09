@@ -94,6 +94,7 @@ export default async function PostViewer({ params }: PageProps) {
       <main>
         <div
           className="mt-10 prose prose-img:rounded-[8px] max-w-full dark:prose-invert w-full"
+          id="post-content"
           dangerouslySetInnerHTML={{
             __html: content,
           }}
