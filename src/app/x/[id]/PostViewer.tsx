@@ -17,6 +17,12 @@ export default async function PostViewer({ params }: PageProps) {
 
   const posts = await getTwitterPosts();
   const postid = (await params).id;
+
+  // Check if posts data exists
+  if (!posts || !posts.data) {
+    notFound();
+  }
+
   const post = posts.data.find((p) => p.id === postid);
 
   if (!post) {

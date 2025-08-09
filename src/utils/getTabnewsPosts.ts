@@ -19,15 +19,35 @@ type Posts = {
 }[];
 
 export default async function getTabnewsPosts() {
-  const res = await fetch("https://www.tabnews.com.br/api/v1/contents/kauadev?page=1&per_page=50", {
-    next: { revalidate: 60 },
-  });
+  try {
+    const res = await fetch(
+      "https://www.tabnews.com.br/api/v1/contents/kauadev?page=1&per_page=50",
+      {
+        next: { revalidate: 60 },
+      }
+    );
 
-  const json = (await res.json()) as Posts;
+    if (!res.ok) {
+      console.error(`Tabnews API error: ${res.status} ${res.statusText}`);
+      return [];
+    }
 
-  const validPosts = json.filter(
-    (post) => post.parent_id === null && post.title !== null && post.deleted_at === null
-  );
+    // Check if response is JSON
+    const contentType = res.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      console.error("Tabnews API returned non-JSON response");
+      return [];
+    }
 
-  return validPosts;
+    const json = (await res.json()) as Posts;
+
+    const validPosts = json.filter(
+      (post) => post.parent_id === null && post.title !== null && post.deleted_at === null
+    );
+
+    return validPosts;
+  } catch (error) {
+    console.error("Error fetching Tabnews posts:", error);
+    return [];
+  }
 }

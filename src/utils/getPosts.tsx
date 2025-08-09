@@ -43,36 +43,39 @@ export default async function getPosts() {
   try {
     const xPosts = await getTwitterPosts();
 
-    xPosts?.data?.forEach((post) => {
-      const attchaments: Posts[0]["attachments"] = [];
+    // Only process Twitter posts if the API call was successful
+    if (xPosts?.data) {
+      xPosts.data.forEach((post) => {
+        const attchaments: Posts[0]["attachments"] = [];
 
-      post.attachments?.media_keys?.forEach((key) => {
-        const media = xPosts.includes.media.find((m) => m.media_key === key);
-        if (media) {
-          attchaments.push({
-            height: media.height,
-            width: media.width,
-            url: media.url,
-            type: media.type,
-          });
-        }
-      });
+        post.attachments?.media_keys?.forEach((key) => {
+          const media = xPosts.includes.media.find((m) => m.media_key === key);
+          if (media) {
+            attchaments.push({
+              height: media.height,
+              width: media.width,
+              url: media.url,
+              type: media.type,
+            });
+          }
+        });
 
-      posts.push({
-        id: post.id,
-        rawDate: post.created_at,
-        date: toSimpleDate(post.created_at),
-        in: "x",
-        title:
-          (post.text as string).length > 80
-            ? `${(post.text as string).slice(0, 80)}...`
-            : (post.text as string),
-        views: post.public_metrics.impression_count.toString(),
-        attachments: attchaments,
+        posts.push({
+          id: post.id,
+          rawDate: post.created_at,
+          date: toSimpleDate(post.created_at),
+          in: "x",
+          title:
+            (post.text as string).length > 80
+              ? `${(post.text as string).slice(0, 80)}...`
+              : (post.text as string),
+          views: post.public_metrics.impression_count.toString(),
+          attachments: attchaments,
+        });
       });
-    });
+    }
   } catch (error) {
-    console.error(error);
+    console.error("Error processing Twitter posts:", error);
   }
 
   posts.sort((a, b) => new Date(b.rawDate).getTime() - new Date(a.rawDate).getTime());
