@@ -10,7 +10,7 @@ export default function AboutCount() {
   const [views, setViews] = React.useState<number | null>(null);
 
   React.useEffect(() => {
-    fetch("/api/about/count")
+    fetch("https://kaua.dev.br/api/about/count")
       .then((res) => res.json())
       .then((data) => setViews(data.views));
   }, []);
