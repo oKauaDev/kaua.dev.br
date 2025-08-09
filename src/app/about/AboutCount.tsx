@@ -11,8 +11,14 @@ export default function AboutCount() {
 
   React.useEffect(() => {
     fetch("https://kaua.dev.br/api/about/count")
-      .then((res) => res.json())
-      .then((data) => setViews(data.views));
+      .then(async (res) => {
+        if (!res.ok) return;
+        const contentType = res.headers.get("content-type") || "";
+        if (!contentType.includes("application/json")) return;
+        const data = await res.json();
+        setViews(data.views);
+      })
+      .catch(() => {});
   }, []);
 
   if (views === null) {
