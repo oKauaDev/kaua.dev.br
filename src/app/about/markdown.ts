@@ -1,28 +1,21 @@
 export const markdown = `
-Um desenvolvedor full-stack freelancer de Minas Gerais que transforma café ☕ em código e ideias em soluções digitais ultrarrápidas e impactantes. Com mais de 5 anos de experiência, já criei de tudo: desde interfaces que encantam até sistemas complexos que rodam nos bastidores. E sim, faço isso tudo enquanto exploro montanhas (ou pelo menos planejo a próxima aventura)!
+Sim, gosto de detalhes.
 
-Sou o arquiteto por trás de aplicações web completas, do front-end ao back-end. Minhas ferramentas favoritas?
+---
 
-* **Next.js** e **Astro JS** para interfaces velozes e modernas  
-* **Node.js** e **Express** para back-ends robustos e escaláveis  
-* **APIs REST** que integram tudo como um quebra-cabeça perfeito  
+Trabalho com tecnologia no geral, principalmente na área de programação e computadores, trabalhei cerca de 4 anos como desenvolvedor autônomo, mas hoje é apenas por hobby. Trabalho em uma empresa diferente agora, fui de um autônomo para um CLT... Minha situação é essa:
 
-Trabalho como freelancer, entregando projetos que não só funcionam, mas se destacam no mercado.
+<img src="ei.png" width="200" height="200" style="display: block; margin: 0 auto;" alt="Minha situação atual na empresa..." />
 
-![Paisagem de montanhas com céu nublado](/paisagem.webp)
+Tenho alguns hobbies, como simplesmente ver paisagens bonitas, escalar lugares altos, escutar música boa (somente música boa!). Mas me divirto programando também, algo que pessoas comuns não entendem... mas para mim é bem divertido ver tudo sendo montado na minha frente.
 
-"Gosto de escalar e explorar lugares no meu tempo livre."
+> NOTA: Atualmente estou com uma vontade imensa de largar as telas por um tempo, mas trabalho é trabalho...
+ 
+Sou uma pessoa curiosa, mas só quando realmente é do meu interesse, não gosto de ficar vendo, lembrando ou aprendendo coisas que não vou usar, por isso nunca fui considerado um bom aluno em várias matérias...
 
-Alguns cases que mostram como eu misturo código + criatividade:
+---
 
-1. **[Luxfy](https://luxfy.app/)**: Criei uma solução completa (front + back) com Next.js e Node.js puro em 1 mês — performance máxima, sem enrolação  
-2. **[SapiencIA](https://sapienciaedu.com.br/)**: Desenvolvi uma plataforma em Next.js em apenas 2 meses, focando em uma experiência de usuário tão intuitiva que até sua avó usaria!  
-3. **Halvo**: Integrei front-end e back-end usando APIs REST, garantindo que o sistema cresça sem travar, mesmo sob demanda alta  
+Esse site não é como um blog, nem uma carta de apresentação, obviamente, só estou reservando [kaua.dev.br](https://kaua.dev.br) como meu espacinho pessoal nessa imensa internet (como uma gota d'água em um oceano).
 
-Quando não estou programando, você me encontra:
-
-* Escalando montanhas (ou subindo escadas de prédios altos pra ver a vista)  
-* 🍣 Aprendendo algo novo (sim, até como fazer sushi... porque por que não?)  
-
-Se você quer um desenvolvedor full-stack que entrega projetos rápidos, eficientes e com um toque de "uau, como ele fez isso?", é só me chamar!
+Fique à vontade para olhar, é nóis ✌️
 `;

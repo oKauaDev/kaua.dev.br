@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import React from "react";
 import AboutCount from "./AboutCount";
 import { markdown } from "./markdown";
+import VeryCurrentAge from "./VeryCurrentAge";
 
 const DATE = 1749747079157;
 
@@ -78,12 +79,17 @@ export default async function AboutPage() {
       </section>
 
       <main>
-        <div
-          className="mt-10 prose prose-img:rounded-[8px] max-w-full dark:prose-invert w-full"
-          dangerouslySetInnerHTML={{
-            __html: content,
-          }}
-        />
+        <div className="mt-10 prose prose-img:rounded-[8px] max-w-full dark:prose-invert w-full">
+          <p>
+            Oi! Sou o Kauã, atualmente tenho <VeryCurrentAge />.
+          </p>
+
+          <div
+            dangerouslySetInnerHTML={{
+              __html: content,
+            }}
+          />
+        </div>
       </main>
       <Footer />
     </>
