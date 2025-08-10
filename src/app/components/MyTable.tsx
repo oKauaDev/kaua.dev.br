@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import getPosts from "@/utils/getPosts";
+import getPosts, { Posts } from "@/utils/getPosts";
 import {
   Table,
   TableBody,
@@ -11,12 +13,25 @@ import {
 } from "@/components/ui/table";
 import X from "@/components/icons/X";
 import Tabnews from "@/components/icons/Tabnews";
-import { getTranslations } from "next-intl/server";
 import formatNumber from "@/utils/formatNumber";
+import { useTranslations } from "next-intl";
+import getTabnewsPosts from "@/utils/getTabnewsPosts";
 
-export default async function MyTable() {
-  const t = await getTranslations("HomePage");
-  const posts = await getPosts();
+export default function MyTable() {
+  const t = useTranslations("HomePage");
+  const [exec, setExec] = React.useState(false);
+  const [posts, setPosts] = React.useState<Posts>([]);
+
+  React.useEffect(() => {
+    const fetchPosts = async () => {
+      setExec(true);
+      const tabnewsPosts = await getTabnewsPosts();
+      const data = await getPosts(tabnewsPosts);
+      setPosts(data);
+    };
+
+    if (!exec) fetchPosts();
+  }, [exec]);
 
   return (
     <Table>

@@ -1,7 +1,9 @@
-import getTabnewsPosts from "./getTabnewsPosts";
-import getTwitterPosts from "./getTwitterPosts";
+"use server";
 
-type Posts = {
+import getTwitterPosts from "./getTwitterPosts";
+import { Posts as TabnewsPosts } from "./getTabnewsPosts";
+
+export type Posts = {
   id: string;
   rawDate: string;
   date: string;
@@ -20,10 +22,8 @@ function toSimpleDate(dates: string) {
   return `${day}/${month}/${year}`;
 }
 
-export default async function getPosts() {
+export default async function getPosts(tabnewsPosts: TabnewsPosts) {
   const posts: Posts = [];
-
-  const tabnewsPosts = await getTabnewsPosts();
 
   tabnewsPosts.forEach((post) => {
     posts.push({
@@ -43,7 +43,6 @@ export default async function getPosts() {
   try {
     const xPosts = await getTwitterPosts();
 
-    // Only process Twitter posts if the API call was successful
     if (xPosts?.data) {
       xPosts.data.forEach((post) => {
         const attchaments: Posts[0]["attachments"] = [];

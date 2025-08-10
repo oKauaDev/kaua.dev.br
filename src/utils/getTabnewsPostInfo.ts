@@ -1,4 +1,4 @@
-interface PostInfo {
+export interface PostInfo {
   id: string;
   owner_id: string;
   parent_id: null;
@@ -26,8 +26,6 @@ export default async function getTabnewsPostInfo(id: string) {
       next: { revalidate: 43200 },
     }
   );
-
-  console.warn(res);
 
   if (!res.ok) {
     return null;

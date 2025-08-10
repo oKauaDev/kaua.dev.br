@@ -1,4 +1,4 @@
-type Posts = {
+export type Posts = {
   id: string;
   owner_id: string;
   parent_id: string | null;
@@ -26,8 +26,6 @@ export default async function getTabnewsPosts() {
         next: { revalidate: 3600 },
       }
     );
-
-    console.warn(res);
 
     if (!res.ok) {
       console.error(`Tabnews API error: ${res.status} ${res.statusText}`);

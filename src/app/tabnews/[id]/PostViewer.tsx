@@ -1,32 +1,49 @@
+"use client";
+
 import Tabnews from "@/components/icons/Tabnews";
 import { markdownToHtml } from "@/lib/markdown";
 import formatNumber from "@/utils/formatNumber";
-import getTabnewsPostInfo from "@/utils/getTabnewsPostInfo";
-import { getTranslations } from "next-intl/server";
-import { notFound } from "next/navigation";
+import getTabnewsPostInfo, { PostInfo } from "@/utils/getTabnewsPostInfo";
+import { useTranslations } from "next-intl";
+import { notFound, useParams } from "next/navigation";
 import React from "react";
 
-type PageProps = {
-  params: Promise<{
-    id: string;
-  }>;
-};
+export default function PostViewer() {
+  const t = useTranslations("TabnewsPostPage");
+  const params = useParams();
+  const [exec, setExec] = React.useState<boolean>(false);
+  const [post, setPost] = React.useState<PostInfo | null>(null);
+  const [content, setContent] = React.useState<string | null>(null);
 
-export default async function PostViewer({ params }: PageProps) {
-  const t = await getTranslations("TabnewsPostPage");
+  React.useEffect(() => {
+    const fetchPost = async () => {
+      const id = typeof params.id === "string" ? params.id : undefined;
+      if (!id) {
+        notFound();
+      }
 
-  const post = await getTabnewsPostInfo((await params).id);
+      setExec(true);
+      const postInfo = await getTabnewsPostInfo(id);
 
-  if (!post) {
-    notFound();
-  }
+      if (postInfo) {
+        const content = await markdownToHtml(postInfo.body);
+        setContent(content);
+      }
 
-  const dateLong = new Date(post.published_at).toLocaleDateString("pt-BR", {
+      setPost(postInfo);
+    };
+
+    if (!exec) fetchPost();
+  }, [params, exec]);
+
+  if (!post) return null;
+
+  const dateLong = new Date(post?.published_at ?? Date.now()).toLocaleDateString("pt-BR", {
     day: "2-digit",
     month: "long",
     year: "numeric",
   });
-  const dateShort = new Date(post.published_at).toLocaleDateString("pt-BR", {
+  const dateShort = new Date(post?.published_at ?? Date.now()).toLocaleDateString("pt-BR", {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
@@ -64,8 +81,6 @@ export default async function PostViewer({ params }: PageProps) {
     timeDiff = `${t("ago")}`;
   }
 
-  const content = await markdownToHtml(post.body);
-
   return (
     <>
       <section className="mt-10">
@@ -96,7 +111,7 @@ export default async function PostViewer({ params }: PageProps) {
           className="mt-10 prose prose-img:rounded-[8px] max-w-full dark:prose-invert w-full"
           id="post-content"
           dangerouslySetInnerHTML={{
-            __html: content,
+            __html: content ?? "",
           }}
         ></div>
       </main>
