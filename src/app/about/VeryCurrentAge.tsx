@@ -27,7 +27,7 @@ export default function VeryCurrentAge() {
       {" "}
       {age} anos, {monthDiff} {monthDiff === 1 ? "mês" : "meses"} e {dayDiff}{" "}
       {dayDiff === 1 ? "dia" : "dias"}, {hourDiff} {hourDiff === 1 ? "hora" : "horas"}, {minuteDiff}{" "}
-      {minuteDiff === 1 ? "minuto" : "minutos"} e {secondDiff}{" "}
+      {minuteDiff === 1 ? "minuto" : "minutos"}, {secondDiff}{" "}
       {secondDiff === 1 ? "segundo" : "segundos"}
     </>
   );
