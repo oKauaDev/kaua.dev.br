@@ -6,18 +6,12 @@ import PostViewer from "./PostViewer";
 
 export const revalidate = 10800;
 
-type PageProps = {
-  params: Promise<{
-    id: string;
-  }>;
-};
-
-export default async function TabnewsPostPage({ params }: PageProps) {
+export default async function TabnewsPostPage() {
   return (
     <>
       <Navbar />
       <Suspense fallback={<PostLoading />}>
-        <PostViewer params={params} />
+        <PostViewer />
       </Suspense>
       <Footer />
     </>
