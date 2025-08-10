@@ -20,13 +20,12 @@ interface PostInfo {
 }
 
 export default async function getTabnewsPostInfo(id: string) {
-  const res = await fetch(`https://www.tabnews.com.br/api/v1/contents/kauadev/${id}`, {
-    next: { revalidate: 3600 },
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36",
-    },
-  });
+  const res = await fetch(
+    `https://proxy-kaua-dev-br.proxy-kaua-dev-br.workers.dev/proxy/contents/kauadev/${id}`,
+    {
+      next: { revalidate: 43200 },
+    }
+  );
 
   console.warn(res);
 

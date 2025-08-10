@@ -21,13 +21,9 @@ type Posts = {
 export default async function getTabnewsPosts() {
   try {
     const res = await fetch(
-      "https://www.tabnews.com.br/api/v1/contents/kauadev?page=1&per_page=50",
+      "https://proxy-kaua-dev-br.proxy-kaua-dev-br.workers.dev/proxy/contents/kauadev?page=1&per_page=50",
       {
-        next: { revalidate: 60 },
-        headers: {
-          "User-Agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36",
-        },
+        next: { revalidate: 3600 },
       }
     );
 
