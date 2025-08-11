@@ -21,12 +21,17 @@ export default async function Navbar() {
 
       <div className="hidden items-center gap-5 max-md:gap-1 max-sm:flex">
         <Link
+          href="/"
+          className="leading-6 text-neutral-800 dark:text-neutral-300 py-1 px-2 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer"
+        >
+          {t("home")}
+        </Link>
+        <Link
           href="/about"
-          className="leading-6 text-neutral-800 dark:text-neutral-300 py-2 px-4 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer"
+          className="leading-6 text-neutral-800 dark:text-neutral-300 py-1 px-2 rounded transition-colors duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer"
         >
           {t("about")}
         </Link>
-        <ThemeButton />
       </div>
 
       <div className="flex items-center gap-5 max-md:gap-1">
@@ -87,6 +92,10 @@ export default async function Navbar() {
             <p>{t("tooltip_tabnews")}</p>
           </TooltipContent>
         </Tooltip>
+
+        <div className="hidden max-sm:block">
+          <ThemeButton />
+        </div>
       </div>
     </nav>
   );

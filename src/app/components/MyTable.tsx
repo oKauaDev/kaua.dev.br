@@ -16,11 +16,12 @@ import Tabnews from "@/components/icons/Tabnews";
 import formatNumber from "@/utils/formatNumber";
 import { useTranslations } from "next-intl";
 import getTabnewsPosts from "@/utils/getTabnewsPosts";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function MyTable() {
   const t = useTranslations("HomePage");
   const [exec, setExec] = React.useState(false);
-  const [posts, setPosts] = React.useState<Posts>([]);
+  const [posts, setPosts] = React.useState<Posts | null>(null);
 
   React.useEffect(() => {
     const fetchPosts = async () => {
@@ -32,6 +33,39 @@ export default function MyTable() {
 
     if (!exec) fetchPosts();
   }, [exec]);
+
+  if (!Array.isArray(posts)) {
+    return (
+      <>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[80px] text-sm text-neutral-700 font-normal leading-4 dark:text-neutral-400">
+                {t("table_date")}
+              </TableHead>
+              <TableHead className="w-[16px] text-sm text-neutral-700 font-normal leading-4 dark:text-neutral-400">
+                {t("table_in")}
+              </TableHead>
+              <TableHead className="text-sm text-neutral-700 font-normal leading-4 dark:text-neutral-400">
+                {t("table_title")}
+              </TableHead>
+              <TableHead className="w-[40px] text-sm text-neutral-700 font-normal leading-4 dark:text-neutral-400  text-right">
+                {t("table_views")}
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+        </Table>
+
+        <div className="w-full h-full flex flex-col gap-1 mt-3">
+          <Skeleton className="w-full min-h-10" />
+          <Skeleton className="w-full min-h-10" />
+          <Skeleton className="w-full min-h-10" />
+          <Skeleton className="w-full min-h-10" />
+          <Skeleton className="w-full min-h-10" />
+        </div>
+      </>
+    );
+  }
 
   return (
     <Table>

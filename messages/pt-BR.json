@@ -3,7 +3,8 @@
     "about": "Sobre",
     "tooltip_x": "Acessar meu perfil no X",
     "tooltip_tabnews": "Acessar meu perfil no Tabnews",
-    "tooltip_github": "Acessar meu perfil no GitHub"
+    "tooltip_github": "Acessar meu perfil no GitHub",
+    "home": "Início"
   },
 
   "FooterComponent": {
