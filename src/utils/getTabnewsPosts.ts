@@ -21,7 +21,7 @@ export type Posts = {
 export default async function getTabnewsPosts() {
   try {
     const res = await fetch(
-      "https://proxy-kaua-dev-br.proxy-kaua-dev-br.workers.dev/proxy/contents/kauadev?page=1&per_page=50",
+      "https://www.tabnews.com.br/api/v1/contents/kauadev?page=1&per_page=50",
       {
         next: { revalidate: 3600 },
       }

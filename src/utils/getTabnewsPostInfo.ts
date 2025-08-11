@@ -20,12 +20,9 @@ export interface PostInfo {
 }
 
 export default async function getTabnewsPostInfo(id: string) {
-  const res = await fetch(
-    `https://proxy-kaua-dev-br.proxy-kaua-dev-br.workers.dev/proxy/contents/kauadev/${id}`,
-    {
-      next: { revalidate: 43200 },
-    }
-  );
+  const res = await fetch(`https://www.tabnews.com.br/api/v1/contents/kauadev/${id}`, {
+    next: { revalidate: 43200 },
+  });
 
   if (!res.ok) {
     return null;
